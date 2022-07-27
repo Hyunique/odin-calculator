@@ -6,34 +6,51 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="favicon.ico" />
+        <script src="https://kit.fontawesome.com/4c536a6bd5.js" crossorigin="anonymous"></script>
+        <title>* Calculator *</title>
     </head>
 
     <body>
         <div class="device">
-            <h1 class="display">0</h1>
+            <h1 class="display">
+                0
+            </h1>
             <div class="digitDiv">
-                <button class="digit">1</button>
-                <button class="digit">2</button>
-                <button class="digit">3</button>
-                <button class="digit">4</button>
-                <button class="digit">5</button>
-                <button class="digit">6</button>
                 <button class="digit">7</button>
                 <button class="digit">8</button>
                 <button class="digit">9</button>
-                <button class="digit">0</button>
-            </div>
-            <div class="operatorDiv">
                 <button class="operator" id="plus">+</button>
+                <button class="digit">4</button>
+                <button class="digit">5</button>
+                <button class="digit">6</button>
                 <button class="operator" id="minus">-</button>
+                <button class="digit">1</button>
+                <button class="digit">2</button>
+                <button class="digit">3</button>
                 <button class="operator" id="multiply">*</button>
-                <button class="operator" id="divide">/</button>
-                <button class="equal">=</button>
                 <button class="clear">C</button>
+                <button class="digit">0</button>
+                <button class="equal">=</button>
+                <button class="operator" id="divide">/</button>
             </div>
-
         </div>
+        <footer>
+            <p>
+                Copyright ©
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
+                hyunique
+            </p>
+            <a href="https://github.com/hyunique" target="_blank">
+                <i class="fab fa-github"></i></a>
+        </footer>
         <script src="index.js"></script>
     </body>
 
