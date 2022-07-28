@@ -1,49 +1,60 @@
 
-
 let display = document.querySelector('.display')
-// let displayValue = display.textContent
-let num1 = 0
-let num2
+let num1 = ''
+let num2 = ''
 let solutionVal
+let tool;
+let isCalculating = false;
+let operators = document.querySelectorAll('.operator');
+
+
 /* Display numbers when clicked */
 const numBtns = document.querySelectorAll('.digit')
 for (let numBtn of numBtns) {
+    let integer = numBtn.textContent //to convert string to integer
     numBtn.addEventListener('click', () => {
-        if (num1 === 0) {
-            num1 = parseInt(numBtn.textContent)
-        } else { num2 = parseInt(numBtn.textContent) }
-        display.textContent = numBtn.textContent
+        appendNum(integer)
     })
 }
 
+function appendNum(num) {
+    if (isCalculating == false) {
+        resetDisplay()
+        num1 += num
+        display.textContent += num1
+    } else if (isCalculating == true) {
+        resetDisplay()
+        num2 += num
+        display.textContent += num2
+    }
+}
 
+function resetDisplay() {
+    display.textContent = ''
+
+}
 
 /* Operations */
 function add(num1, num2) {
-    solutionVal = num1 + num2
-    display.textContent = num1 + num2
-    console.log(num1 + num2)
+    solutionVal = parseInt(num1) + parseInt(num2)
 }
 function subtract(num1, num2) {
-    display.textContent = num1 - num2
-    console.log(num1 - num2)
+    solutionVal = parseInt(num1) - parseInt(num2)
 }
 function multiply(num1, num2) {
-    display.textContent = num1 * num2
-    console.log(num1 * num2)
+    solutionVal = parseInt(num1) * parseInt(num2)
 }
 function divide(num1, num2) {
-    display.textContent = num1 / num2
-    console.log(num1 / num2)
+    solutionVal = parseInt(num1) / parseInt(num2)
 }
 
 //return name of the operator for operate function when clicked 
-let tool
-let operators = document.querySelectorAll('.operator')
 for (let operator of operators) {
     operator.addEventListener('click', () => {
+        isCalculating = true;
+        display.textContent = ''
         tool = operator.getAttribute('id');
-        console.log(tool)
+
     })
 }
 function operate() {
@@ -57,6 +68,7 @@ function operate() {
         case 'divide': divide(num1, num2);
             break;
     }
+    display.textContent = solutionVal
 }
 
 //when hit Equals Key=> run operate function
@@ -66,10 +78,15 @@ equal.addEventListener('click', operate)
 
 //reset numbers and operator 
 const reset = document.querySelector('.clear')
-function resetVal() {
+function resetOperation() {
+    isCalculating = false;
     display.textContent = 0;
-    num1 = 0
-    num2 = 0
-    tool = ''
+    num1 = 0;
+    num2 = 0;
+    tool = '';
 }
-reset.addEventListener('click', resetVal)
+reset.addEventListener('click', resetOperation)
+
+
+//to do
+//odin 5-b
