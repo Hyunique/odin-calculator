@@ -14,26 +14,37 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     border-radius: 20px;
 }
 
 
-.display {
+.displayDiv {
     width: 240px;
-    height: 40px;
-    font-size: 40px;
-    color: rgb(1, 69, 69);
+    height: 80px;
     background-color: white;
-    font-size: 400;
     text-align: right;
     border-radius: 10px;
     padding: 10px;
 }
 
+h3 {
+    font-size: 20px;
+    font-weight: 300;
+    color: rgb(42, 98, 98);
+    margin: 0;
+}
+
+h1 {
+    font-size: 50px;
+    color: rgb(1, 69, 69);
+    font-weight: 400;
+    margin: 0;
+}
+
 .digitDiv {
     width: 300px;
-    margin: 10px;
+    /* margin-bottom: 10px; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -51,7 +62,7 @@ button {
     /* border: solid 2px rgb(200, 200, 200); */
     border-radius: 20px;
     font-family: 'Inconsolata', monospace;
-    font-size: 400;
+    font-weight: 300;
 }
 
 footer {
